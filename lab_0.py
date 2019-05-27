@@ -32,13 +32,7 @@ def time_plot(df, png='images/time_plot.png'):
 
 def scored_plot(df, png='images/score_plot.png'):
     sns_plot = sns.scatterplot(
-        x="popularity", y="score", hue="popularity", size="score", sizes=(5, 20), data=df)
-    sns_plot.get_figure().savefig(png)
-
-
-def scored_plot(df, png='images/score_plot.png'):
-    sns_plot = sns.scatterplot(
-        x="date", y="score", hue="popularity", size="score", sizes=(5, 20), data=df)
+        x="popularity", y="score", hue="popularity", data=df)
     sns_plot.get_figure().savefig(png)
 
 
