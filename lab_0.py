@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import json
+
+from pprint import pprint
 from datetime import datetime
 
 
@@ -34,6 +36,25 @@ def scored_plot(df, png='images/score_plot.png'):
     sns_plot.get_figure().savefig(png)
 
 
+def scored_plot(df, png='images/score_plot.png'):
+    sns_plot = sns.scatterplot(
+        x="date", y="score", hue="popularity", size="score", sizes=(5, 20), data=df)
+    sns_plot.get_figure().savefig(png)
+
+
+def get_params(df, name):
+    return {
+        'name': name,
+        'mean': df[name].mean(),
+        'median': df[name].median(),
+        'max': df[name].max(),
+        'rad': df[name].max() - df[name].min(),
+        'mode': df[name].mode(),
+        'std': df[name].std(),
+        'd': df[name].std() ** 2
+    }
+
+
 def main():
     metrics = ['score', 'scored_by',
                'aired', 'name', 'popularity', 'genre']
@@ -47,7 +68,7 @@ def main():
     popularity_plot(df)
     time_plot(df)
     scored_plot(df)
-
+    pprint(get_params(df, 'popularity'))
 
 if __name__ == '__main__':
     main()
