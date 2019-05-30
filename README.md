@@ -12,7 +12,30 @@
 Построенные графики:
 ***
 ![](images/popularity_plot.png)
+
 ***
 ![](images/score_plot.png)
+
 ***
 ![](images/time_plot.png)
+
+***
+
+## [Второй датасет](https://bitly.com/a/404notfound)
+
+***
+
+Два графика. 
+
+На первом отражены самые популярные языки программирования замеченные в вапросах на stackoverflow в заголовках 
+
+На втором те же языки, но только в текстах самих вопросов.
+
+
+***
+![](images/lang_title.png)
+
+***
+![](images/lang_body.png)
+
+***
