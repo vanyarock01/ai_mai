@@ -61,10 +61,12 @@ def clusters_to_markdown_table(file, clusters):
     lenc = len(clusters[0])
     with open(file, 'w+') as f:
         f.write('cluster_id ' + '| * ' * (lenc-1) + '\n')
+        f.write(' --- ' + '| ---' * (lenc-1) + '\n')
         for i, e in enumerate(clusters):
             f.write(str(i) + ' | ')
             f.write(' | '.join([t[0] for t in e]))
             f.write('\n')
+            f.write('  ' + '| ' * (lenc-1) + '\n')
 
 
 if __name__ == '__main__':
